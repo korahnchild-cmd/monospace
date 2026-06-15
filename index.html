@@ -14,15 +14,15 @@
             theme: {
                 extend: {
                     colors: {
-                        ebony: '#050505', /* 더 깊고 무거운 럭셔리 블랙 */
-                        point: '#c9a84c', /* 은은한 샴페인 골드 */
+                        ebony: '#050505', 
+                        point: '#c9a84c', 
                         surface: '#0a0a0f',
                     },
                     fontFamily: {
                         sans: ['Pretendard', 'sans-serif'],
                     },
                     letterSpacing: {
-                        ultra: '0.4em', /* 럭셔리 브랜드 특유의 넓은 자간 */
+                        ultra: '0.4em', 
                     }
                 }
             }
@@ -30,7 +30,6 @@
     </script>
 
     <style>
-        /* [Custom Style] 프리미엄 디테일 */
         body {
             background-color: #050505;
             color: #ffffff;
@@ -38,32 +37,30 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* 고급스러운 페이드인업 스크롤 애니메이션 */
+        /* 스크롤 애니메이션 */
         .reveal {
             opacity: 0;
             transform: translateY(40px);
             transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1);
         }
-
         .reveal.active {
             opacity: 1;
             transform: translateY(0);
         }
 
-        /* 하이엔드 글래스모피즘 */
+        /* 글래스모피즘 */
         .glass-premium {
             background: rgba(255, 255, 255, 0.015);
             backdrop-filter: blur(24px);
-            -webkit-backdrop-filter: blur(24px);
             border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-        /* 커스텀 스크롤바 미니멀라이징 */
-        ::-webkit-scrollbar { width: 2px; }
-        ::-webkit-scrollbar-track { background: transparent; }
-        ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.2); }
+        /* 스크롤바 */
+        ::-webkit-scrollbar { width: 3px; }
+        ::-webkit-scrollbar-track { background: #050505; }
+        ::-webkit-scrollbar-thumb { background: #c9a84c; border-radius: 10px; }
 
-        /* 견적 계산기 선택 효과 (골드 아웃라인 & 글로우) */
+        /* 견적 계산기 활성화 칩 */
         .chip-active {
             background: rgba(201, 168, 76, 0.1) !important;
             color: #c9a84c !important;
@@ -74,13 +71,11 @@
 </head>
 <body class="overflow-x-hidden selection:bg-point selection:text-black">
 
-    <!-- [NAVBAR] 네비게이션 (미니멀 탑바) -->
+    <!-- [NAVBAR] -->
     <nav class="fixed top-0 w-full z-[100] px-8 py-6 flex justify-between items-center bg-ebony/30 backdrop-blur-md border-b border-white/5">
-        <!-- 브랜드 로고 -->
-        <div class="text-xs md:text-sm font-light tracking-ultra text-white/90">
+        <div class="text-xs md:text-sm font-light tracking-ultra text-white/90 cursor-pointer" onclick="window.scrollTo(0,0)">
             MONO SPACE
         </div>
-        <!-- 우측 액션 -->
         <div class="flex items-center gap-8">
             <button onclick="location.href='#estimate'" class="text-[11px] uppercase tracking-ultra text-white/70 hover:text-white transition-colors duration-500 pb-1 border-b border-white/20 hover:border-white">
                 Start Project
@@ -88,126 +83,162 @@
         </div>
     </nav>
 
-    <!-- [HERO] 좌우 분할 구조 히어로 섹션 -->
+    <!-- [HERO] 좌우 분할 구조 -->
     <section class="relative min-h-screen w-full flex items-center bg-ebony overflow-hidden pt-24 md:pt-0">
         <div class="max-w-7xl mx-auto w-full px-6 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-8 items-center relative z-10 h-full">
             
             <!-- [LEFT] 텍스트 레이어 -->
-            <div class="flex flex-col justify-center items-start text-left order-1">
+            <div class="flex flex-col justify-center items-start text-left order-1 relative z-20 md:pr-10 py-10">
                 <p class="reveal text-point tracking-ultra text-[10px] md:text-xs uppercase mb-8 opacity-80">
                     Premium Web Agency
                 </p>
-
-                <!-- 얇고 우아한 타이포그래피 -->
-                <h1 class="reveal text-5xl md:text-[5.5rem] lg:text-[6rem] font-light tracking-tight leading-[1.05] mb-10 text-white">
+                <h1 class="reveal text-5xl md:text-[5.5rem] lg:text-[6.5rem] font-light tracking-tight leading-[1.05] mb-10 text-white drop-shadow-xl">
                     Web Design,<br>
-                    <span class="italic text-white/50 font-serif">Redefined.</span>
+                    <span class="italic text-white/60 font-serif">Redefined.</span>
                 </h1>
-                
-                <p class="reveal text-white/40 text-sm md:text-base font-light tracking-wide leading-relaxed max-w-md mb-14">
+                <p class="reveal text-white/50 text-sm md:text-base font-light tracking-wide leading-relaxed max-w-md mb-14 drop-shadow-md">
                     감각적인 디자인, 영구적인 호스팅.<br> 
                     압도적인 3D 인터랙티브 경험을 월 고정비 없이 소유하세요.
                 </p>
-                
-                <!-- 버튼 영역 -->
                 <div class="reveal">
-                    <button onclick="location.href='#estimate'" class="group relative px-10 py-4 bg-white/5 backdrop-blur-md border border-white/10 rounded-full overflow-hidden hover:border-white/30 transition-all duration-700">
+                    <button onclick="location.href='#estimate'" class="group relative px-10 py-4 bg-white/5 backdrop-blur-md border border-white/10 rounded-full overflow-hidden hover:border-white/30 transition-all duration-700 shadow-2xl shadow-black">
                         <div class="absolute inset-0 w-0 bg-white transition-all duration-[800ms] ease-out group-hover:w-full"></div>
                         <span class="relative z-10 text-xs tracking-ultra text-white group-hover:text-black transition-colors duration-500 uppercase">무료 견적 확인하기</span>
                     </button>
                 </div>
             </div>
 
-            <!-- [RIGHT] Spline 3D 임베드 구역 -->
-            <div class="relative w-full h-[50vh] md:h-[80vh] flex items-center justify-center order-2 reveal" style="transition-delay: 0.2s;">
+            <!-- [RIGHT] Spline 3D 오로라 구체 -->
+            <div class="relative w-full h-[50vh] md:h-[80vh] flex items-center justify-center order-2 reveal overflow-hidden rounded-3xl z-10" style="transition-delay: 0.2s;">
                 <iframe src='https://my.spline.design/reactiveorb-ep2yBwxuTKRxBCWECWPis0JW/' frameborder='0' width='100%' height='100%' style="border:none;"></iframe>
-                
-                <!-- 우측 3D 구역에만 부드럽게 스며드는 비네팅 오버레이 -->
-                <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,#050505_100%)] pointer-events-none"></div>
+                <!-- 공간감을 위한 은은한 외곽 그라데이션 -->
+                <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,#050505_90%)] pointer-events-none"></div>
             </div>
         </div>
 
-        <!-- 하단 스크롤 유도 선 (Framer 스타일의 얇은 선) -->
+        <!-- 하단 스크롤 인디케이터 -->
         <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 opacity-50">
             <span class="text-[9px] tracking-ultra text-white uppercase">Scroll</span>
             <div class="w-[1px] h-10 bg-gradient-to-b from-white to-transparent"></div>
         </div>
     </section>
 
-    <!-- [FEATURES] 서비스 특징 섹션 -->
-    <section id="features" class="py-40 px-6 relative">
-        <!-- 배경 장식 글로우 -->
+    <!-- [FEATURES] 핵심 가치 -->
+    <section id="features" class="py-32 px-6 relative border-t border-white/5">
         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-point/5 rounded-full blur-[120px] pointer-events-none"></div>
-
         <div class="max-w-7xl mx-auto relative z-10">
-            <div class="reveal mb-32 flex flex-col items-center text-center">
+            <div class="reveal mb-24 flex flex-col items-center text-center">
                 <h2 class="text-point tracking-ultra text-[10px] uppercase mb-6">Core Values</h2>
                 <h3 class="text-3xl md:text-5xl font-light tracking-tight leading-tight text-white/90">
                     압도적인 퀄리티,<br>
                     <span class="text-white/40 italic">합리적인 운영.</span>
                 </h3>
             </div>
-
             <div class="grid md:grid-cols-3 gap-8 md:gap-12">
                 <!-- 카드 1 -->
-                <div class="reveal glass-premium p-12 md:p-16 rounded-[2rem] hover:-translate-y-2 transition-all duration-700">
-                    <div class="w-12 h-12 border border-white/10 rounded-full flex items-center justify-center text-white/50 mb-10">
-                        <span class="text-xs font-mono">01</span>
-                    </div>
+                <div class="reveal glass-premium p-12 rounded-[2rem] hover:-translate-y-2 transition-all duration-700">
+                    <div class="w-12 h-12 border border-white/10 rounded-full flex items-center justify-center text-white/50 mb-8"><span class="text-xs font-mono">01</span></div>
                     <h4 class="text-xl font-medium tracking-wide mb-4 text-white/90">초고속 출고</h4>
-                    <p class="text-white/40 text-sm font-light leading-relaxed">
-                        자체 빌더 최적화 시스템을 통해 기획부터 런칭까지 단 2주면 충분합니다. 시간은 곧 비즈니스의 경쟁력입니다.
-                    </p>
+                    <p class="text-white/40 text-sm font-light leading-relaxed">자체 빌더 최적화 시스템을 통해 기획부터 런칭까지 단 2주면 충분합니다.</p>
                 </div>
                 <!-- 카드 2 -->
-                <div class="reveal glass-premium p-12 md:p-16 rounded-[2rem] hover:-translate-y-2 transition-all duration-700" style="transition-delay: 0.1s;">
-                    <div class="w-12 h-12 border border-white/10 rounded-full flex items-center justify-center text-white/50 mb-10">
-                        <span class="text-xs font-mono">02</span>
-                    </div>
+                <div class="reveal glass-premium p-12 rounded-[2rem] hover:-translate-y-2 transition-all duration-700" style="transition-delay: 0.1s;">
+                    <div class="w-12 h-12 border border-white/10 rounded-full flex items-center justify-center text-white/50 mb-8"><span class="text-xs font-mono">02</span></div>
                     <h4 class="text-xl font-medium tracking-wide mb-4 text-white/90">유지비 0원</h4>
-                    <p class="text-white/40 text-sm font-light leading-relaxed">
-                        영구 무료 호스팅 기술을 적용하여 제작 이후 추가로 발생하는 서버 유지비용이 전혀 없습니다.
-                    </p>
+                    <p class="text-white/40 text-sm font-light leading-relaxed">영구 무료 호스팅 기술을 적용하여 추가로 발생하는 서버 유지비용이 전혀 없습니다.</p>
                 </div>
                 <!-- 카드 3 -->
-                <div class="reveal glass-premium p-12 md:p-16 rounded-[2rem] hover:-translate-y-2 transition-all duration-700" style="transition-delay: 0.2s;">
-                    <div class="w-12 h-12 border border-white/10 rounded-full flex items-center justify-center text-point mb-10 border-point/30">
-                        <span class="text-xs font-mono">03</span>
-                    </div>
+                <div class="reveal glass-premium p-12 rounded-[2rem] hover:-translate-y-2 transition-all duration-700" style="transition-delay: 0.2s;">
+                    <div class="w-12 h-12 border border-white/10 rounded-full flex items-center justify-center text-point mb-8 border-point/30"><span class="text-xs font-mono">03</span></div>
                     <h4 class="text-xl font-medium tracking-wide mb-4 text-white/90">3D 인터랙티브</h4>
-                    <p class="text-white/40 text-sm font-light leading-relaxed">
-                        멈춰있는 웹사이트는 잊으세요. 고객의 시선을 사로잡는 하이엔드 3D 모션을 스크롤에 맞게 연출합니다.
-                    </p>
+                    <p class="text-white/40 text-sm font-light leading-relaxed">고객의 시선을 사로잡는 하이엔드 3D 모션을 스크롤에 맞게 연출합니다.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- [ESTIMATE] AI 견적 계산기 섹션 -->
-    <section id="estimate" class="py-40 px-6 bg-surface border-t border-white/5">
+    <!-- [PORTFOLIO] 갤러리 섹션 (신설) -->
+    <section id="portfolio" class="py-32 px-6 relative border-t border-white/5 bg-[#08080a]">
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div class="reveal mb-24 flex flex-col items-center text-center">
+                <h2 class="text-point tracking-ultra text-[10px] uppercase mb-6">Selected Works</h2>
+                <h3 class="text-3xl md:text-5xl font-light tracking-tight leading-tight text-white/90">
+                    우리의 철학이 담긴<br>
+                    <span class="text-white/40 italic">프로젝트.</span>
+                </h3>
+            </div>
+
+            <!-- 3열 격자 레이아웃 -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- 포트폴리오 카드 1 -->
+                <div class="reveal group cursor-pointer">
+                    <div class="relative overflow-hidden rounded-[1.5rem] border border-white/10 aspect-[4/5] bg-black mb-6 transition-all duration-500 group-hover:border-point/50 group-hover:shadow-[0_0_30px_rgba(201,168,76,0.15)]">
+                        <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&q=80&w=800" alt="Architecture" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100 mix-blend-luminosity group-hover:mix-blend-normal">
+                        <!-- 골드 오버레이 그라데이션 -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity"></div>
+                    </div>
+                    <div class="px-2">
+                        <span class="text-point text-[10px] tracking-widest uppercase mb-2 block">Architecture</span>
+                        <h4 class="text-lg font-medium text-white/90 mb-1">럭셔리 건축사사무소 하이엔드 랜딩페이지</h4>
+                        <p class="text-white/40 text-xs font-light">3D 공간 투어링 & 프리미엄 브랜드 경험</p>
+                    </div>
+                </div>
+
+                <!-- 포트폴리오 카드 2 -->
+                <div class="reveal group cursor-pointer" style="transition-delay: 0.1s;">
+                    <div class="relative overflow-hidden rounded-[1.5rem] border border-white/10 aspect-[4/5] bg-black mb-6 transition-all duration-500 group-hover:border-point/50 group-hover:shadow-[0_0_30px_rgba(201,168,76,0.15)]">
+                        <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=800" alt="Tech Startup" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100 mix-blend-luminosity group-hover:mix-blend-normal">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity"></div>
+                    </div>
+                    <div class="px-2">
+                        <span class="text-point text-[10px] tracking-widest uppercase mb-2 block">IT Tech</span>
+                        <h4 class="text-lg font-medium text-white/90 mb-1">IT 테크 스타트업 플랫폼 웹사이트</h4>
+                        <p class="text-white/40 text-xs font-light">SaaS 플랫폼 UI/UX 및 직관적 인터페이스</p>
+                    </div>
+                </div>
+
+                <!-- 포트폴리오 카드 3 -->
+                <div class="reveal group cursor-pointer" style="transition-delay: 0.2s;">
+                    <div class="relative overflow-hidden rounded-[1.5rem] border border-white/10 aspect-[4/5] bg-black mb-6 transition-all duration-500 group-hover:border-point/50 group-hover:shadow-[0_0_30px_rgba(201,168,76,0.15)]">
+                        <img src="https://images.unsplash.com/photo-1542009849-06bba3c14d59?auto=format&fit=crop&q=80&w=800" alt="Cafe Brand" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100 mix-blend-luminosity group-hover:mix-blend-normal">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity"></div>
+                    </div>
+                    <div class="px-2">
+                        <span class="text-point text-[10px] tracking-widest uppercase mb-2 block">F&B Brand</span>
+                        <h4 class="text-lg font-medium text-white/90 mb-1">감각적인 프리미엄 카페 홍보 웹사이트</h4>
+                        <p class="text-white/40 text-xs font-light">미니멀리즘 기반의 시각적 스토리텔링</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- [ESTIMATE] 실시간 견적 계산기 -->
+    <section id="estimate" class="py-32 px-6 border-t border-white/5 bg-ebony">
         <div class="max-w-4xl mx-auto reveal">
-            <div class="text-center mb-24">
+            <div class="text-center mb-20">
                 <h2 class="text-point tracking-ultra text-[10px] uppercase mb-6">Interactive Estimate</h2>
-                <h3 class="text-3xl md:text-5xl font-light tracking-tight text-white/90 mb-6">투명하고 정확한 견적.</h3>
+                <h3 class="text-3xl md:text-4xl font-light tracking-tight text-white/90 mb-4">투명하고 정확한 견적.</h3>
                 <p class="text-white/40 font-light text-sm">원하시는 구성을 선택하시면 AI가 즉시 비용을 산출합니다.</p>
             </div>
 
-            <div class="glass-premium p-8 md:p-16 rounded-[2.5rem]">
+            <div class="glass-premium p-8 md:p-14 rounded-[2.5rem]">
                 <!-- 질문 1 -->
-                <div class="mb-16">
+                <div class="mb-14">
                     <label class="block text-[10px] font-medium text-white/50 mb-6 uppercase tracking-ultra">01. 프로젝트 유형</label>
                     <div class="flex flex-wrap gap-4">
-                        <button onclick="setBasePrice(150, this)" class="type-btn chip-active text-sm font-light border border-white/10 bg-white/[0.02] px-8 py-4 rounded-full transition-all duration-500 hover:border-white/30 text-white/70">식당/카페</button>
-                        <button onclick="setBasePrice(200, this)" class="type-btn text-sm font-light border border-white/10 bg-white/[0.02] px-8 py-4 rounded-full transition-all duration-500 hover:border-white/30 text-white/70">일반 기업형</button>
-                        <button onclick="setBasePrice(250, this)" class="type-btn text-sm font-light border border-white/10 bg-white/[0.02] px-8 py-4 rounded-full transition-all duration-500 hover:border-white/30 text-white/70">건축/인테리어</button>
+                        <button onclick="setBasePrice(150, this)" class="type-btn chip-active text-sm font-light border border-white/10 bg-white/[0.02] px-8 py-3.5 rounded-full transition-all duration-500 hover:border-white/30 text-white/70">식당/카페</button>
+                        <button onclick="setBasePrice(200, this)" class="type-btn text-sm font-light border border-white/10 bg-white/[0.02] px-8 py-3.5 rounded-full transition-all duration-500 hover:border-white/30 text-white/70">일반 기업형</button>
+                        <button onclick="setBasePrice(250, this)" class="type-btn text-sm font-light border border-white/10 bg-white/[0.02] px-8 py-3.5 rounded-full transition-all duration-500 hover:border-white/30 text-white/70">건축/인테리어</button>
                     </div>
                 </div>
 
                 <!-- 질문 2 -->
-                <div class="mb-20">
+                <div class="mb-16">
                     <label class="block text-[10px] font-medium text-white/50 mb-6 uppercase tracking-ultra">02. 프리미엄 옵션 (중복 선택)</label>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                        <!-- 옵션 1 -->
                         <label class="group flex items-center justify-between p-5 border border-white/10 rounded-2xl cursor-pointer hover:bg-white/[0.02] transition-all duration-500 hover:border-white/20">
                             <span class="text-sm font-light text-white/70 group-hover:text-white">Spline 3D 인터랙티브</span>
                             <div class="relative flex items-center">
@@ -215,7 +246,6 @@
                                 <svg class="absolute w-3 h-3 left-1 pointer-events-none opacity-0 check-icon text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
                             </div>
                         </label>
-                        <!-- 옵션 2 -->
                         <label class="group flex items-center justify-between p-5 border border-white/10 rounded-2xl cursor-pointer hover:bg-white/[0.02] transition-all duration-500 hover:border-white/20">
                             <span class="text-sm font-light text-white/70 group-hover:text-white">24시간 AI 비서</span>
                             <div class="relative flex items-center">
@@ -223,7 +253,6 @@
                                 <svg class="absolute w-3 h-3 left-1 pointer-events-none opacity-0 check-icon text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
                             </div>
                         </label>
-                        <!-- 옵션 3 -->
                         <label class="group flex items-center justify-between p-5 border border-white/10 rounded-2xl cursor-pointer hover:bg-white/[0.02] transition-all duration-500 hover:border-white/20">
                             <span class="text-sm font-light text-white/70 group-hover:text-white">다국어 로컬라이징</span>
                             <div class="relative flex items-center">
@@ -232,82 +261,74 @@
                             </div>
                         </label>
                     </div>
-                    <style>
-                        /* 커스텀 체크박스 아이콘 표시 로직 */
-                        .opt-check:checked + .check-icon { opacity: 1; }
-                    </style>
+                    <style>.opt-check:checked + .check-icon { opacity: 1; }</style>
                 </div>
 
                 <!-- 합계 표시 -->
-                <div class="pt-16 border-t border-white/10 text-center">
+                <div class="pt-12 border-t border-white/10 text-center">
                     <span class="text-[10px] text-white/40 uppercase tracking-ultra">Estimated Cost</span>
-                    <div class="text-6xl md:text-[5.5rem] font-light mt-6 text-white tracking-tighter">
-                        <span id="total-display">150</span><span class="text-2xl md:text-3xl ml-3 font-light text-white/30">만 원</span>
+                    <div class="text-5xl md:text-7xl font-light mt-4 text-white tracking-tighter">
+                        <span id="total-display">150</span><span class="text-xl md:text-3xl ml-2 font-light text-white/30">만 원</span>
                     </div>
-                    <p class="text-white/30 text-[11px] mt-8 font-light tracking-wide">* 부가세 별도 / 상세 기획에 따라 조정될 수 있습니다.</p>
+                    <p class="text-white/30 text-[11px] mt-6 font-light tracking-wide">* 부가세 별도 / 상세 기획에 따라 조정될 수 있습니다.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- [FOOTER] 푸터 -->
-    <footer class="py-24 px-6 border-t border-white/5 bg-ebony">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-16">
+    <!-- [FOOTER] -->
+    <footer class="py-20 px-6 border-t border-white/5 bg-ebony">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-12">
             <div>
-                <div class="text-lg font-light tracking-ultra mb-8 text-white/90">MONO SPACE</div>
-                <p class="text-white/40 text-sm font-light leading-loose max-w-sm">
+                <div class="text-lg font-light tracking-ultra mb-6 text-white/90">MONO SPACE</div>
+                <p class="text-white/40 text-sm font-light leading-relaxed max-w-sm">
                     웹사이트는 브랜드가 세상과 만나는 첫 번째 쇼룸입니다.<br>
-                    우리는 완벽한 미학으로 당신의 비즈니스를 재정의합니다.
+                    완벽한 미학으로 당신의 비즈니스를 재정의합니다.
                 </p>
             </div>
-            <div class="space-y-6 text-sm font-light">
+            <div class="space-y-4 text-sm font-light">
                 <p class="text-[10px] tracking-ultra uppercase text-white/30">Contact Us</p>
                 <p class="text-white/60 hover:text-white transition cursor-pointer">hello@monospace.ai</p>
                 <p class="text-white/60 hover:text-white transition cursor-pointer">Kakao: @monospace_design</p>
             </div>
         </div>
-        <div class="max-w-7xl mx-auto mt-24 pt-8 border-t border-white/5 flex justify-between items-center text-[9px] text-white/30 tracking-ultra uppercase">
+        <div class="max-w-7xl mx-auto mt-20 pt-6 border-t border-white/5 flex justify-between items-center text-[9px] text-white/30 tracking-ultra uppercase">
             <span>© 2024 MONO SPACE.</span>
             <span>All rights reserved.</span>
         </div>
     </footer>
 
-    <!-- [AI CHATBOT] 챗봇 UI -->
+    <!-- [AI CHATBOT] -->
     <div class="fixed bottom-8 right-8 z-[200]">
-        <!-- 챗봇 토글 버튼 -->
-        <button id="chat-toggle" onclick="toggleChat()" class="w-14 h-14 bg-white rounded-full flex items-center justify-center hover:scale-105 transition-transform duration-500 shadow-[0_0_40px_rgba(255,255,255,0.1)]">
+        <button id="chat-toggle" onclick="toggleChat()" class="w-14 h-14 bg-white rounded-full flex items-center justify-center hover:scale-105 transition-transform duration-500 shadow-[0_0_30px_rgba(255,255,255,0.1)]">
             <svg class="w-5 h-5 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M8 10h.01M12 10h.01M16 10h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </button>
 
-        <!-- 챗봇 윈도우 -->
-        <div id="chat-window" class="opacity-0 pointer-events-none translate-y-10 absolute bottom-20 right-0 w-[340px] h-[480px] glass-premium rounded-[2rem] shadow-2xl flex flex-col overflow-hidden transition-all duration-500 ease-out border border-white/10">
-            <!-- 헤더 -->
-            <div class="p-6 border-b border-white/5 flex justify-between items-center bg-white/[0.02]">
+        <div id="chat-window" class="opacity-0 pointer-events-none translate-y-10 absolute bottom-20 right-0 w-[320px] md:w-[350px] h-[450px] glass-premium rounded-[2rem] shadow-2xl flex flex-col overflow-hidden transition-all duration-500 ease-out border border-white/10">
+            <div class="p-5 border-b border-white/5 flex justify-between items-center bg-white/[0.02]">
                 <div class="flex items-center gap-3">
                     <div class="w-1.5 h-1.5 bg-point rounded-full animate-pulse shadow-[0_0_10px_#c9a84c]"></div>
                     <span class="font-light tracking-wide text-sm text-white/90">AI Concierge</span>
                 </div>
                 <button onclick="toggleChat()" class="text-white/40 hover:text-white transition-colors">&times;</button>
             </div>
-            <!-- 메시지 영역 -->
-            <div id="chat-log" class="flex-1 p-6 overflow-y-auto space-y-5 text-sm font-light scroll-smooth">
+            <div id="chat-log" class="flex-1 p-5 overflow-y-auto space-y-4 text-sm font-light scroll-smooth">
                 <div class="bg-white/[0.05] p-4 rounded-2xl rounded-tl-sm border border-white/5 max-w-[85%] leading-relaxed text-white/80">
                     안녕하세요. 모노 스페이스 전용 AI 컨시어지입니다. 프로젝트 일정이나 상세 포트폴리오 안내를 도와드릴까요?
                 </div>
             </div>
-            <!-- 입력창 -->
             <div class="p-4 border-t border-white/5 bg-black/20 backdrop-blur-xl">
                 <div class="relative flex items-center">
-                    <input id="chat-input" type="text" placeholder="문의사항을 남겨주세요." class="w-full bg-transparent border border-white/10 rounded-full px-5 py-3.5 text-xs font-light text-white placeholder-white/30 focus:outline-none focus:border-white/40 transition-colors">
+                    <input id="chat-input" type="text" placeholder="문의사항을 남겨주세요." class="w-full bg-transparent border border-white/10 rounded-full px-4 py-3 text-xs font-light text-white placeholder-white/30 focus:outline-none focus:border-white/40 transition-colors">
                     <button onclick="sendChat()" class="absolute right-4 text-white/50 hover:text-white tracking-widest text-[10px] uppercase transition-colors">Send</button>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- [SCRIPTS] 로직 및 인터랙션 -->
+    <!-- [SCRIPTS] -->
     <script>
-        // 1. 스크롤 애니메이션 (Intersection Observer)
+        // 1. 스크롤 애니메이션
         const observerOptions = { threshold: 0.15 };
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -316,18 +337,14 @@
                 }
             });
         }, observerOptions);
-
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
         // 2. 견적 계산기 로직
-        let basePrice = 150; // 기본값: 식당/카페
+        let basePrice = 150; // 기본값
 
         function setBasePrice(val, btn) {
             basePrice = val;
-            // 버튼 활성화 스타일 전환
-            document.querySelectorAll('.type-btn').forEach(b => {
-                b.classList.remove('chip-active');
-            });
+            document.querySelectorAll('.type-btn').forEach(b => b.classList.remove('chip-active'));
             btn.classList.add('chip-active');
             calcTotal();
         }
@@ -337,12 +354,9 @@
             document.querySelectorAll('.opt-check:checked').forEach(check => {
                 total += parseInt(check.value);
             });
-            
-            // 숫자 카운트업 애니메이션
             animateValue("total-display", parseInt(document.getElementById('total-display').innerText), total, 600);
         }
 
-        // 숫자 롤링 애니메이션 함수
         function animateValue(id, start, end, duration) {
             let obj = document.getElementById(id);
             let range = end - start;
@@ -365,23 +379,19 @@
             run();
         }
 
-        // 3. AI 챗봇 로직
+        // 3. AI 챗봇
         function toggleChat() {
             const win = document.getElementById('chat-window');
-            if (win.classList.contains('opacity-0')) {
-                win.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-10');
-            } else {
-                win.classList.add('opacity-0', 'pointer-events-none', 'translate-y-10');
-            }
+            win.classList.toggle('opacity-0');
+            win.classList.toggle('pointer-events-none');
+            win.classList.toggle('translate-y-10');
         }
 
         function sendChat() {
             const input = document.getElementById('chat-input');
             const log = document.getElementById('chat-log');
-            
             if (input.value.trim() === "") return;
 
-            // 사용자 말풍선 생성
             const userMsg = document.createElement('div');
             userMsg.className = "bg-white text-black p-4 rounded-2xl rounded-tr-sm ml-auto max-w-[85%] font-medium leading-relaxed shadow-lg";
             userMsg.innerText = input.value;
@@ -391,17 +401,15 @@
             input.value = "";
             log.scrollTop = log.scrollHeight;
 
-            // AI 응답 딜레이 시뮬레이션 (사장님: 추후 API 연동 위치)
             setTimeout(() => {
                 const aiMsg = document.createElement('div');
                 aiMsg.className = "bg-white/[0.05] p-4 rounded-2xl rounded-tl-sm border border-white/5 max-w-[85%] leading-relaxed text-white/80";
-                aiMsg.innerText = "말씀하신 '" + userText + "' 에 대한 내용을 컨설턴트에게 전달했습니다. 정확한 분석을 위해 곧 이메일로 답변을 발송해 드리겠습니다.";
+                aiMsg.innerText = "말씀하신 '" + userText + "' 에 대한 내용을 컨설턴트에게 전달했습니다. 상세한 답변을 준비하겠습니다.";
                 log.appendChild(aiMsg);
                 log.scrollTop = log.scrollHeight;
-            }, 1000);
+            }, 800);
         }
 
-        // 챗봇 엔터키 지원
         document.getElementById('chat-input').addEventListener('keypress', function (e) {
             if (e.key === 'Enter') sendChat();
         });
