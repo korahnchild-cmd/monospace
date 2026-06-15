@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PREMIUM WEB STUDIO | AI Powered Design</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Pretendard Font -->
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#0a0a0f',
+                        point: '#c9a84c',
+                        card: '#16161e',
+                    },
+                    fontFamily: {
+                        sans: ['Pretendard', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #0a0a0f;
+            color: #e5e7eb;
+            word-break: keep-all;
+        }
+
+        /* 스크롤 애니메이션 클래스 */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* 커스텀 스크롤바 */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #0a0a0f; }
+        ::-webkit-scrollbar-thumb { background: #c9a84c; border-radius: 10px; }
+
+        /* Spline 캔버스 오버레이 */
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body class="antialiased overflow-x-hidden">
+
+    <!-- [NAVBAR] 상단 네비게이션 -->
+    <nav class="fixed top-0 w-full z-50 px-6 py-4 flex justify-between items-center glass-effect">
+        <div class="text-xl font-bold tracking-tighter text-white">
+            WEB <span class="text-point">STUDIO</span>
+        </div>
+        <div class="hidden md:flex space-x-8 text-sm font-medium">
+            <a href="#services" class="hover:text-point transition">Services</a>
+            <a href="#estimate" class="hover:text-point transition">Estimate</a>
+            <a href="#contact" class="hover:text-point transition">Contact</a>
+        </div>
+        <button class="bg-point text-black px-5 py-2 rounded-full text-sm font-bold hover:scale-105 transition shadow-lg shadow-point/20">
+            Start Project
+        </button>
+    </nav>
+
+    <!-- [HERO SECTION] 3D 오브젝트 및 메인 카피 -->
+    <section class="relative h-screen w-full flex items-center justify-center overflow-hidden">
+        <!-- Spline 3D Placeholder (관리자가 Spline URL만 변경하면 됨) -->
+        <div class="absolute inset-0 z-0">
+            <!-- 아래 iframe 주소를 본인의 Spline 씬 주소로 교체하세요 -->
+            <iframe src='https://my.spline.design/clonercubeanimation-09497e4f71a069502931448658600d86/' frameborder='0' width='100%' height='100%'></iframe>
+        </div>
+
+        <div class="relative z-10 text-center px-4">
+            <h1 class="text-5xl md:text-8xl font-bold tracking-tight mb-6 leading-tight">
+                Crafting <span class="text-point italic">Digital</span><br>Experience
+            </h1>
+            <p class="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-10">
+                우리는 단순한 웹사이트를 넘어, 브랜드의 가치를 3D와 AI 기술로 극대화하는 프리미엄 디지털 솔루션을 제공합니다.
+            </p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                <a href="#estimate" class="bg-white text-black px-8 py-4 rounded-full font-bold hover:bg-point transition">무료 견적 확인하기</a>
+                <a href="#services" class="border border-white/20 px-8 py-4 rounded-full font-bold hover:bg-white/10 transition">기술 스택 보기</a>
+            </div>
+        </div>
+
+        <!-- 하단 스크롤 가이드 -->
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce opacity-50">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+        </div>
+    </section>
+
+    <!-- [SERVICE SECTION] 강점 소개 -->
+    <section id="services" class="py-32 px-6 bg-dark">
+        <div class="max-w-6xl mx-auto">
+            <div class="reveal mb-20 text-center">
+                <h2 class="text-point text-sm font-bold tracking-widest uppercase mb-4">Our Expertise</h2>
+                <h3 class="text-4xl md:text-5xl font-bold text-white">최고의 기술력으로 완성되는 비즈니스</h3>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- 서비스 카드 1 -->
+                <div class="reveal glass-effect p-10 rounded-3xl hover:border-point/50 transition group">
+                    <div class="w-12 h-12 bg-point/10 rounded-xl flex items-center justify-center mb-6 text-point group-hover:scale-110 transition">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <h4 class="text-xl font-bold mb-4">High Performance</h4>
+                    <p class="text-gray-400 leading-relaxed">0.1초의 차이가 매출을 결정합니다. 초경량 코드 최적화로 압도적인 속도를 구현합니다.</p>
+                </div>
+                <!-- 서비스 카드 2 -->
+                <div class="reveal glass-effect p-10 rounded-3xl hover:border-point/50 transition group" style="transition-delay: 0.1s;">
+                    <div class="w-12 h-12 bg-point/10 rounded-xl flex items-center justify-center mb-6 text-point group-hover:scale-110 transition">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <h4 class="text-xl font-bold mb-4">Interactive Design</h4>
+                    <p class="text-gray-400 leading-relaxed">Framer 급의 부드러운 스크롤 인터랙션과 3D 요소를 결합해 사용자 경험을 혁신합니다.</p>
+                </div>
+                <!-- 서비스 카드 3 -->
+                <div class="reveal glass-effect p-10 rounded-3xl hover:border-point/50 transition group" style="transition-delay: 0.2s;">
+                    <div class="w-12 h-12 bg-point/10 rounded-xl flex items-center justify-center mb-6 text-point group-hover:scale-110 transition">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9.75 17L9 21h6l-.75-4M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <h4 class="text-xl font-bold mb-4">AI Integration</h4>
+                    <p class="text-gray-400 leading-relaxed">단순한 홈페이지를 넘어 AI 챗봇, 자동화 마케팅 툴이 내장된 지능형 웹 서비스를 구축합니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- [ESTIMATE CALCULATOR] AI 실시간 견적 계산기 -->
+    <section id="estimate" class="py-32 px-6 bg-[#0f0f15]">
+        <div class="max-w-4xl mx-auto reveal">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">AI Instant Estimate</h2>
+                <p class="text-gray-400">원하시는 옵션을 선택하시면 즉시 예상 견적이 도출됩니다.</p>
+            </div>
+
+            <div class="glass-effect p-8 md:p-12 rounded-[2rem] shadow-2xl">
+                <!-- 질문 1: 프로젝트 타입 -->
+                <div class="mb-10">
+                    <label class="block text-sm font-semibold text-point mb-4 uppercase tracking-wider">Step 1. 프로젝트 유형</label>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                        <button onclick="updateEstimate('type', 'landing', 150)" class="type-btn active border border-white/10 py-3 rounded-xl hover:bg-point/10 transition active:bg-point">랜딩페이지</button>
+                        <button onclick="updateEstimate('type', 'corporate', 300)" class="type-btn border border-white/10 py-3 rounded-xl hover:bg-point/10 transition">기업형</button>
+                        <button onclick="updateEstimate('type', 'mall', 500)" class="type-btn border border-white/10 py-3 rounded-xl hover:bg-point/10 transition">쇼핑몰</button>
+                        <button onclick="updateEstimate('type', 'platform', 800)" class="type-btn border border-white/10 py-3 rounded-xl hover:bg-point/10 transition">플랫폼</button>
+                    </div>
+                </div>
+
+                <!-- 질문 2: 페이지 수 -->
+                <div class="mb-10">
+                    <label class="block text-sm font-semibold text-point mb-4 uppercase tracking-wider">Step 2. 예상 페이지 수 (<span id="pageCountDisplay">5</span>개)</label>
+                    <input type="range" min="1" max="50" value="5" oninput="updateEstimate('pages', this.value, 0)" class="w-full h-2 bg-white/10 rounded-lg appearance-none cursor-pointer accent-point">
+                </div>
+
+                <!-- 질문 3: 부가 기능 -->
+                <div class="mb-12">
+                    <label class="block text-sm font-semibold text-point mb-4 uppercase tracking-wider">Step 3. 추가 옵션</label>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <label class="flex items-center space-x-3 cursor-pointer group">
+                            <input type="checkbox" onchange="updateEstimate('opt', 'ai', 50)" class="w-5 h-5 rounded accent-point">
+                            <span class="text-gray-300 group-hover:text-white transition">AI 챗봇 연동 (+50만)</span>
+                        </label>
+                        <label class="flex items-center space-x-3 cursor-pointer group">
+                            <input type="checkbox" onchange="updateEstimate('opt', '3d', 100)" class="w-5 h-5 rounded accent-point">
+                            <span class="text-gray-300 group-hover:text-white transition">3D 인터랙션 구현 (+100만)</span>
+                        </label>
+                        <label class="flex items-center space-x-3 cursor-pointer group">
+                            <input type="checkbox" onchange="updateEstimate('opt', 'seo', 30)" class="w-5 h-5 rounded accent-point">
+                            <span class="text-gray-300 group-hover:text-white transition">전문 SEO 최적화 (+30만)</span>
+                        </label>
+                        <label class="flex items-center space-x-3 cursor-pointer group">
+                            <input type="checkbox" onchange="updateEstimate('opt', 'multilang', 70)" class="w-5 h-5 rounded accent-point">
+                            <span class="text-gray-300 group-hover:text-white transition">다국어 대응 (+70만)</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- 견적 결과 창 -->
+                <div class="bg-dark/50 p-8 rounded-2xl border border-point/20 text-center">
+                    <p class="text-gray-400 text-sm mb-2">총 예상 견적 (VAT 별도)</p>
+                    <div class="text-4xl md:text-5xl font-bold text-white">
+                        <span id="totalPrice">0</span><span class="text-xl ml-2 text-point text-white">만원</span>
+                    </div>
+                    <p class="text-xs text-gray-500 mt-4">* 본 견적은 AI 자동 계산 수치로 상담 후 변동될 수 있습니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- [FOOTER] -->
+    <footer id="contact" class="py-20 px-6 border-t border-white/5">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12">
+            <div>
+                <h2 class="text-3xl font-bold mb-6">Let's build something<br><span class="text-point italic text-4xl">extraordinary.</span></h2>
+                <p class="text-gray-500 mb-8">당신의 아이디어를 프리미엄 웹사이트로 실현하세요.</p>
+                <div class="space-y-2 text-sm text-gray-400">
+                    <p>Email: contact@webstudio.ai</p>
+                    <p>Address: 서울특별시 강남구 테헤란로 123</p>
+                </div>
+            </div>
+            <div class="flex flex-col justify-end items-end">
+                <div class="flex space-x-4 mb-8">
+                    <a href="#" class="w-10 h-10 border border-white/10 rounded-full flex items-center justify-center hover:bg-point transition">IG</a>
+                    <a href="#" class="w-10 h-10 border border-white/10 rounded-full flex items-center justify-center hover:bg-point transition">BE</a>
+                    <a href="#" class="w-10 h-10 border border-white/10 rounded-full flex items-center justify-center hover:bg-point transition">LI</a>
+                </div>
+                <p class="text-gray-600 text-xs">© 2024 Premium Web Studio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- [AI CHATBOT UI] 우측 하단 플로팅 챗봇 -->
+    <div class="fixed bottom-6 right-6 z-[100]">
+        <!-- 챗봇 열기 버튼 -->
+        <button id="chatBtn" onclick="toggleChat()" class="w-16 h-16 bg-point rounded-full shadow-2xl flex items-center justify-center hover:scale-110 transition duration-300">
+            <svg class="w-8 h-8 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M8 10h.01M12 10h.01M16 10h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+
+        <!-- 챗봇 창 (기본 숨김) -->
+        <div id="chatWindow" class="hidden absolute bottom-20 right-0 w-[350px] h-[500px] glass-effect rounded-3xl overflow-hidden flex flex-col shadow-2xl border border-white/20">
+            <div class="bg-point p-4 text-black font-bold flex justify-between items-center">
+                <span>AI Assistant</span>
+                <button onclick="toggleChat()" class="text-xl">&times;</button>
+            </div>
+            <div id="chatMessages" class="flex-1 p-4 overflow-y-auto flex flex-col space-y-4 text-sm">
+                <div class="bg-white/10 p-3 rounded-2xl rounded-tl-none self-start max-w-[80%]">
+                    안녕하세요! 웹 스튜디오 제작 가이드 AI입니다. 무엇을 도와드릴까요?
+                </div>
+            </div>
+            <div class="p-4 border-t border-white/10 bg-dark">
+                <div class="relative">
+                    <input id="chatInput" type="text" placeholder="메시지를 입력하세요..." class="w-full bg-white/5 border border-white/10 rounded-full py-2 px-4 focus:outline-none focus:border-point transition text-sm">
+                    <button onclick="sendMessage()" class="absolute right-2 top-1.5 text-point hover:text-white transition">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"/></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- [SCRIPTS] 자바스크립트 로직 -->
+    <script>
+        // 1. 스크롤 애니메이션 (Intersection Observer)
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // 2. 견적 계산기 로직
+        let estimateState = {
+            typePrice: 150,
+            pages: 5,
+            optionsPrice: 0
+        };
+
+        const optionsMap = {
+            ai: 50,
+            '3d': 100,
+            seo: 30,
+            multilang: 70
+        };
+
+        function updateEstimate(category, value, price) {
+            if (category === 'type') {
+                estimateState.typePrice = price;
+                // 버튼 스타일 업데이트
+                document.querySelectorAll('.type-btn').forEach(btn => {
+                    btn.classList.remove('bg-point', 'text-black', 'border-point');
+                    if(btn.innerText.includes(value === 'landing' ? '랜딩' : value === 'corporate' ? '기업' : value === 'mall' ? '쇼핑몰' : '플랫폼')) {
+                        btn.classList.add('bg-point', 'text-black', 'border-point');
+                    }
+                });
+            } else if (category === 'pages') {
+                estimateState.pages = value;
+                document.getElementById('pageCountDisplay').innerText = value;
+            } else if (category === 'opt') {
+                const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+                let totalOpt = 0;
+                // 체크박스 상태 순회하며 금액 합산 (단순화를 위해 전체 순회)
+                if(event.target.checked) estimateState.optionsPrice += price;
+                else estimateState.optionsPrice -= price;
+            }
+
+            calculateTotal();
+        }
+
+        function calculateTotal() {
+            // 기본가 + (페이지당 10만원) + 옵션가
+            const total = estimateState.typePrice + (estimateState.pages * 10) + estimateState.optionsPrice;
+            document.getElementById('totalPrice').innerText = total.toLocaleString();
+        }
+
+        // 초기 실행
+        calculateTotal();
+
+        // 3. 챗봇 토글 및 메시지 핸들링
+        function toggleChat() {
+            const win = document.getElementById('chatWindow');
+            win.classList.toggle('hidden');
+        }
+
+        function sendMessage() {
+            const input = document.getElementById('chatInput');
+            const msg = input.value.trim();
+            if(!msg) return;
+
+            appendMessage('user', msg);
+            input.value = '';
+
+            // AI 응답 시뮬레이션 (이 부분에 Google Gemini 또는 OpenAI API 호출 코드를 넣으세요)
+            setTimeout(() => {
+                appendMessage('bot', '문의하신 사항에 대해 곧 전문가가 확인 후 답변드리겠습니다. 예상 견적은 계산기를 통해 즉시 확인 가능합니다.');
+            }, 1000);
+        }
+
+        function appendMessage(sender, text) {
+            const chatMessages = document.getElementById('chatMessages');
+            const msgDiv = document.createElement('div');
+            msgDiv.className = sender === 'user' 
+                ? 'bg-point text-black p-3 rounded-2xl rounded-tr-none self-end max-w-[80%]'
+                : 'bg-white/10 p-3 rounded-2xl rounded-tl-none self-start max-w-[80%]';
+            msgDiv.innerText = text;
+            chatMessages.appendChild(msgDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        // 챗봇 엔터키 지원
+        document.getElementById('chatInput').addEventListener('keypress', (e) => {
+            if(e.key === 'Enter') sendMessage();
+        });
+    </script>
+</body>
+</html>
