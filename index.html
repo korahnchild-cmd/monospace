@@ -37,10 +37,10 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* 스크롤 애니메이션 */
+        /* 하이엔드 스크롤 애니메이션 */
         .reveal {
             opacity: 0;
-            transform: translateY(40px);
+            transform: translateY(30px);
             transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1);
         }
         .reveal.active {
@@ -48,19 +48,19 @@
             transform: translateY(0);
         }
 
-        /* 글래스모피즘 */
+        /* 프리미엄 글래스모피즘 */
         .glass-premium {
             background: rgba(255, 255, 255, 0.015);
             backdrop-filter: blur(24px);
             border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-        /* 스크롤바 */
+        /* 미니멀 커스텀 스크롤바 */
         ::-webkit-scrollbar { width: 3px; }
         ::-webkit-scrollbar-track { background: #050505; }
         ::-webkit-scrollbar-thumb { background: #c9a84c; border-radius: 10px; }
 
-        /* 견적 계산기 활성화 칩 */
+        /* 견적 계산기 칩 활성화 상태 */
         .chip-active {
             background: rgba(201, 168, 76, 0.1) !important;
             color: #c9a84c !important;
@@ -71,9 +71,9 @@
 </head>
 <body class="overflow-x-hidden selection:bg-point selection:text-black">
 
-    <!-- [NAVBAR] -->
+    <!-- [NAVBAR] 프리미엄 탑 네비게이션 -->
     <nav class="fixed top-0 w-full z-[100] px-8 py-6 flex justify-between items-center bg-ebony/30 backdrop-blur-md border-b border-white/5">
-        <div class="text-xs md:text-sm font-light tracking-ultra text-white/90 cursor-pointer" onclick="window.scrollTo(0,0)">
+        <div class="text-xs md:text-sm font-light tracking-ultra text-white/90 cursor-pointer hover:text-white transition-colors" onclick="window.scrollTo(0,0)">
             MONO SPACE
         </div>
         <div class="flex items-center gap-8">
@@ -83,49 +83,58 @@
         </div>
     </nav>
 
-    <!-- [HERO] 좌우 분할 구조 -->
+    <!-- [HERO] 좌우 완벽 분할 히어로 섹션 -->
     <section class="relative min-h-screen w-full flex items-center bg-ebony overflow-hidden pt-24 md:pt-0">
-        <div class="max-w-7xl mx-auto w-full px-6 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-8 items-center relative z-10 h-full">
+        <!-- Grid Layout: PC 좌우 1:1, Mobile 상하 배치 -->
+        <div class="max-w-7xl mx-auto w-full px-6 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 items-center relative z-10 h-full">
             
-            <!-- [LEFT] 텍스트 레이어 -->
-            <div class="flex flex-col justify-center items-start text-left order-1 relative z-20 md:pr-10 py-10">
-                <p class="reveal text-point tracking-ultra text-[10px] md:text-xs uppercase mb-8 opacity-80">
+            <!-- [LEFT] 텍스트 레이어 완벽 정렬 -->
+            <div class="flex flex-col justify-center items-start text-left order-1 relative z-20 md:pr-12">
+                <p class="reveal text-point tracking-ultra text-[10px] md:text-xs uppercase mb-6 opacity-90">
                     Premium Web Agency
                 </p>
-                <h1 class="reveal text-5xl md:text-[5.5rem] lg:text-[6.5rem] font-light tracking-tight leading-[1.05] mb-10 text-white drop-shadow-xl">
+                
+                <!-- 메인 타이틀 -->
+                <h1 class="reveal text-5xl md:text-7xl lg:text-[6.5rem] font-light tracking-tight leading-[1.1] mb-8 text-white drop-shadow-2xl">
                     Web Design,<br>
                     <span class="italic text-white/60 font-serif">Redefined.</span>
                 </h1>
-                <p class="reveal text-white/50 text-sm md:text-base font-light tracking-wide leading-relaxed max-w-md mb-14 drop-shadow-md">
+                
+                <!-- 서브 카피 -->
+                <p class="reveal text-white/50 text-sm md:text-base font-light tracking-wide leading-relaxed max-w-[420px] mb-12 drop-shadow-md">
                     감각적인 디자인, 영구적인 호스팅.<br> 
                     압도적인 3D 인터랙티브 경험을 월 고정비 없이 소유하세요.
                 </p>
+                
+                <!-- CTA 버튼 -->
                 <div class="reveal">
-                    <button onclick="location.href='#estimate'" class="group relative px-10 py-4 bg-white/5 backdrop-blur-md border border-white/10 rounded-full overflow-hidden hover:border-white/30 transition-all duration-700 shadow-2xl shadow-black">
+                    <button onclick="location.href='#estimate'" class="group relative px-10 py-4 md:px-12 md:py-5 bg-white/5 backdrop-blur-md border border-white/10 rounded-full overflow-hidden hover:border-white/30 transition-all duration-700 shadow-2xl shadow-black/50">
                         <div class="absolute inset-0 w-0 bg-white transition-all duration-[800ms] ease-out group-hover:w-full"></div>
-                        <span class="relative z-10 text-xs tracking-ultra text-white group-hover:text-black transition-colors duration-500 uppercase">무료 견적 확인하기</span>
+                        <span class="relative z-10 text-[11px] md:text-xs tracking-ultra text-white group-hover:text-black transition-colors duration-500 uppercase font-medium">무료 견적 확인하기</span>
                     </button>
                 </div>
             </div>
 
-            <!-- [RIGHT] Spline 3D 오로라 구체 -->
-            <div class="relative w-full h-[50vh] md:h-[80vh] flex items-center justify-center order-2 reveal overflow-hidden rounded-3xl z-10" style="transition-delay: 0.2s;">
-                <iframe src='https://my.spline.design/reactiveorb-ep2yBwxuTKRxBCWECWPis0JW/' frameborder='0' width='100%' height='100%' style="border:none;"></iframe>
-                <!-- 공간감을 위한 은은한 외곽 그라데이션 -->
-                <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,#050505_90%)] pointer-events-none"></div>
+            <!-- [RIGHT] Spline 3D 오로라 구체 (업데이트된 임베드 반영) -->
+            <div class="relative w-full h-[50vh] md:h-[85vh] flex items-center justify-center order-2 reveal z-10" style="transition-delay: 0.2s;">
+                <!-- 사용자가 마우스로 구체를 움직일 수 있도록 pointer-events: auto 적용 -->
+                <iframe src='https://my.spline.design/reactiveorb-ep2yBwxuTKRxBCWECWPis0JW/' frameborder='0' width='100%' height='100%' style="border:none; pointer-events: auto; min-height: 400px;"></iframe>
+                
+                <!-- iframe의 사각형 경계선이 보이지 않도록 가장자리만 살짝 녹이는 비네팅 -->
+                <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_50%,#050505_100%)] pointer-events-none"></div>
             </div>
         </div>
 
-        <!-- 하단 스크롤 인디케이터 -->
-        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 opacity-50">
+        <!-- 스크롤 유도 인디케이터 -->
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 opacity-40">
             <span class="text-[9px] tracking-ultra text-white uppercase">Scroll</span>
-            <div class="w-[1px] h-10 bg-gradient-to-b from-white to-transparent"></div>
+            <div class="w-[1px] h-12 bg-gradient-to-b from-white to-transparent"></div>
         </div>
     </section>
 
-    <!-- [FEATURES] 핵심 가치 -->
-    <section id="features" class="py-32 px-6 relative border-t border-white/5">
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-point/5 rounded-full blur-[120px] pointer-events-none"></div>
+    <!-- [FEATURES] 핵심 가치 섹션 -->
+    <section id="features" class="py-32 md:py-40 px-6 relative border-t border-white/5 bg-ebony">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-point/5 rounded-full blur-[150px] pointer-events-none"></div>
         <div class="max-w-7xl mx-auto relative z-10">
             <div class="reveal mb-24 flex flex-col items-center text-center">
                 <h2 class="text-point tracking-ultra text-[10px] uppercase mb-6">Core Values</h2>
@@ -135,19 +144,16 @@
                 </h3>
             </div>
             <div class="grid md:grid-cols-3 gap-8 md:gap-12">
-                <!-- 카드 1 -->
                 <div class="reveal glass-premium p-12 rounded-[2rem] hover:-translate-y-2 transition-all duration-700">
                     <div class="w-12 h-12 border border-white/10 rounded-full flex items-center justify-center text-white/50 mb-8"><span class="text-xs font-mono">01</span></div>
                     <h4 class="text-xl font-medium tracking-wide mb-4 text-white/90">초고속 출고</h4>
                     <p class="text-white/40 text-sm font-light leading-relaxed">자체 빌더 최적화 시스템을 통해 기획부터 런칭까지 단 2주면 충분합니다.</p>
                 </div>
-                <!-- 카드 2 -->
                 <div class="reveal glass-premium p-12 rounded-[2rem] hover:-translate-y-2 transition-all duration-700" style="transition-delay: 0.1s;">
                     <div class="w-12 h-12 border border-white/10 rounded-full flex items-center justify-center text-white/50 mb-8"><span class="text-xs font-mono">02</span></div>
                     <h4 class="text-xl font-medium tracking-wide mb-4 text-white/90">유지비 0원</h4>
                     <p class="text-white/40 text-sm font-light leading-relaxed">영구 무료 호스팅 기술을 적용하여 추가로 발생하는 서버 유지비용이 전혀 없습니다.</p>
                 </div>
-                <!-- 카드 3 -->
                 <div class="reveal glass-premium p-12 rounded-[2rem] hover:-translate-y-2 transition-all duration-700" style="transition-delay: 0.2s;">
                     <div class="w-12 h-12 border border-white/10 rounded-full flex items-center justify-center text-point mb-8 border-point/30"><span class="text-xs font-mono">03</span></div>
                     <h4 class="text-xl font-medium tracking-wide mb-4 text-white/90">3D 인터랙티브</h4>
@@ -157,8 +163,8 @@
         </div>
     </section>
 
-    <!-- [PORTFOLIO] 갤러리 섹션 (신설) -->
-    <section id="portfolio" class="py-32 px-6 relative border-t border-white/5 bg-[#08080a]">
+    <!-- [PORTFOLIO] 갤러리 섹션 -->
+    <section id="portfolio" class="py-32 md:py-40 px-6 relative border-t border-white/5 bg-[#08080a]">
         <div class="max-w-7xl mx-auto relative z-10">
             <div class="reveal mb-24 flex flex-col items-center text-center">
                 <h2 class="text-point tracking-ultra text-[10px] uppercase mb-6">Selected Works</h2>
@@ -168,14 +174,11 @@
                 </h3>
             </div>
 
-            <!-- 3열 격자 레이아웃 -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                
-                <!-- 포트폴리오 카드 1 -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
+                <!-- Portfolio 1 -->
                 <div class="reveal group cursor-pointer">
                     <div class="relative overflow-hidden rounded-[1.5rem] border border-white/10 aspect-[4/5] bg-black mb-6 transition-all duration-500 group-hover:border-point/50 group-hover:shadow-[0_0_30px_rgba(201,168,76,0.15)]">
                         <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&q=80&w=800" alt="Architecture" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100 mix-blend-luminosity group-hover:mix-blend-normal">
-                        <!-- 골드 오버레이 그라데이션 -->
                         <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity"></div>
                     </div>
                     <div class="px-2">
@@ -185,7 +188,7 @@
                     </div>
                 </div>
 
-                <!-- 포트폴리오 카드 2 -->
+                <!-- Portfolio 2 -->
                 <div class="reveal group cursor-pointer" style="transition-delay: 0.1s;">
                     <div class="relative overflow-hidden rounded-[1.5rem] border border-white/10 aspect-[4/5] bg-black mb-6 transition-all duration-500 group-hover:border-point/50 group-hover:shadow-[0_0_30px_rgba(201,168,76,0.15)]">
                         <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=800" alt="Tech Startup" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100 mix-blend-luminosity group-hover:mix-blend-normal">
@@ -198,7 +201,7 @@
                     </div>
                 </div>
 
-                <!-- 포트폴리오 카드 3 -->
+                <!-- Portfolio 3 -->
                 <div class="reveal group cursor-pointer" style="transition-delay: 0.2s;">
                     <div class="relative overflow-hidden rounded-[1.5rem] border border-white/10 aspect-[4/5] bg-black mb-6 transition-all duration-500 group-hover:border-point/50 group-hover:shadow-[0_0_30px_rgba(201,168,76,0.15)]">
                         <img src="https://images.unsplash.com/photo-1542009849-06bba3c14d59?auto=format&fit=crop&q=80&w=800" alt="Cafe Brand" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100 mix-blend-luminosity group-hover:mix-blend-normal">
@@ -210,13 +213,12 @@
                         <p class="text-white/40 text-xs font-light">미니멀리즘 기반의 시각적 스토리텔링</p>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
 
     <!-- [ESTIMATE] 실시간 견적 계산기 -->
-    <section id="estimate" class="py-32 px-6 border-t border-white/5 bg-ebony">
+    <section id="estimate" class="py-32 md:py-40 px-6 border-t border-white/5 bg-ebony">
         <div class="max-w-4xl mx-auto reveal">
             <div class="text-center mb-20">
                 <h2 class="text-point tracking-ultra text-[10px] uppercase mb-6">Interactive Estimate</h2>
@@ -225,7 +227,7 @@
             </div>
 
             <div class="glass-premium p-8 md:p-14 rounded-[2.5rem]">
-                <!-- 질문 1 -->
+                <!-- Step 01 -->
                 <div class="mb-14">
                     <label class="block text-[10px] font-medium text-white/50 mb-6 uppercase tracking-ultra">01. 프로젝트 유형</label>
                     <div class="flex flex-wrap gap-4">
@@ -235,7 +237,7 @@
                     </div>
                 </div>
 
-                <!-- 질문 2 -->
+                <!-- Step 02 -->
                 <div class="mb-16">
                     <label class="block text-[10px] font-medium text-white/50 mb-6 uppercase tracking-ultra">02. 프리미엄 옵션 (중복 선택)</label>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -264,7 +266,7 @@
                     <style>.opt-check:checked + .check-icon { opacity: 1; }</style>
                 </div>
 
-                <!-- 합계 표시 -->
+                <!-- Total Cost -->
                 <div class="pt-12 border-t border-white/10 text-center">
                     <span class="text-[10px] text-white/40 uppercase tracking-ultra">Estimated Cost</span>
                     <div class="text-5xl md:text-7xl font-light mt-4 text-white tracking-tighter">
@@ -326,7 +328,7 @@
         </div>
     </div>
 
-    <!-- [SCRIPTS] -->
+    <!-- [SCRIPTS] 로직 -->
     <script>
         // 1. 스크롤 애니메이션
         const observerOptions = { threshold: 0.15 };
@@ -339,8 +341,8 @@
         }, observerOptions);
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-        // 2. 견적 계산기 로직
-        let basePrice = 150; // 기본값
+        // 2. 실시간 견적 로직
+        let basePrice = 150; 
 
         function setBasePrice(val, btn) {
             basePrice = val;
@@ -379,7 +381,7 @@
             run();
         }
 
-        // 3. AI 챗봇
+        // 3. AI 챗봇 로직
         function toggleChat() {
             const win = document.getElementById('chat-window');
             win.classList.toggle('opacity-0');
